@@ -1,0 +1,28 @@
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+BACKEND_DIR="$DIR/../Resources/backend"
+cd "$BACKEND_DIR" || exit 1
+
+if ! nc -z 127.0.0.1 8000 >/dev/null 2>&1; then
+  if [ ! -d ".venv" ]; then
+    python3 -m venv .venv
+    ./.venv/bin/pip install --upgrade pip >/dev/null 2>&1
+    ./.venv/bin/pip install fastapi "uvicorn[standard]" sqlalchemy aiosqlite httpx pydantic-settings python-jose argon2-cffi >/dev/null 2>&1
+  fi
+  export DATABASE_URL="sqlite+aiosqlite:///./nam_cinema_mac.db"
+  export REDIS_ENABLED="false"
+  export PERSONAL_MODE_ENABLED="true"
+  nohup ./.venv/bin/python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 >/tmp/namcinema.log 2>&1 &
+  for i in {1..25}; do
+    nc -z 127.0.0.1 8000 >/dev/null 2>&1 && break
+    sleep 0.3
+  done
+fi
+
+if [ -d "/Applications/Google Chrome.app" ]; then
+  open -na "Google Chrome" --args --app="http://127.0.0.1:8000"
+elif [ -d "/Applications/Microsoft Edge.app" ]; then
+  open -na "Microsoft Edge" --args --app="http://127.0.0.1:8000"
+else
+  open "http://127.0.0.1:8000"
+fi

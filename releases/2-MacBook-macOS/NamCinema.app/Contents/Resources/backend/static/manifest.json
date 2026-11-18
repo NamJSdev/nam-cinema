@@ -1,0 +1,28 @@
+{
+  "id": "vn.namcinema.app",
+  "name": "Nam Cinema 4K — Your Cinema. Anywhere.",
+  "short_name": "Nam Cinema",
+  "description": "Rạp Phim Cá Nhân 4K HDR chuẩn Netflix — Xem phim lẻ, phim bộ Vietsub tốc độ cao không cần đăng nhập.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "background_color": "#06070B",
+  "theme_color": "#06070B",
+  "orientation": "any",
+  "categories": ["entertainment", "video"],
+  "icons": [
+    {
+      "src": "/static/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

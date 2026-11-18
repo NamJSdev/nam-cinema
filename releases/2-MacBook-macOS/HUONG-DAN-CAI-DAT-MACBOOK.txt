@@ -1,0 +1,10 @@
+=== H??NG D?N C?I ??T NAM CINEMA 4K TR?N MACBOOK (macOS) ===
+
+C?ch 1 (C?i App ??c l?p v?o th? m?c Applications):
+  - Gi?i n?n file 'NamCinema-MacBook-macOS.zip'
+  - Nh?p ??p v?o 'Install-NamCinema-MacBook.command' (ho?c k?o 'NamCinema.app' v?o th? m?c Applications).
+  - M? ?ng d?ng 'Nam Cinema 4K' t? Launchpad ho?c thanh Dock.
+
+C?ch 2 (K?t n?i t?c th? qua m?ng Wi-Fi n?i b?):
+  - M? Safari ho?c Chrome tr?n MacBook, truy c?p: http://192.168.2.173:8000
+  - Ch?n File -> Add to Dock (Th?m v?o Dock) ?? d?ng ngay.

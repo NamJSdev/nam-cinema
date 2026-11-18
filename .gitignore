@@ -1,0 +1,26 @@
+# Python & Virtual Env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local SQLite databases & logs
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.log
+
+# Flutter / IDE / OS
+.dart_tool/
+build/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+.github/

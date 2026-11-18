@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: nam-cinema-4k
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:////tmp/nam_cinema.db
+      - key: REDIS_ENABLED
+        value: "false"
+      - key: PERSONAL_MODE_ENABLED
+        value: "true"
